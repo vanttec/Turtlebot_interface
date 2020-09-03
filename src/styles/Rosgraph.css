@@ -1,0 +1,231 @@
+.NodeActive {
+  color: #64908A;
+}
+.NodeInput {
+  color: rgb(177, 147, 18);
+}
+.NodeOutput {
+  color: rgb(128, 177, 18);
+}
+.NodeFiltered {
+  color: hsla(0,0%,100%,.2);
+}
+
+.ColorOne {
+  background-color: rgba(122, 192, 210, 0.86);
+}
+
+.ColorOneDisabled {
+  background-color: rgba(122, 192, 210, 0.46);
+}
+
+.ColorTwo {
+  background-color: rgba(128, 177, 18, 0.67);
+}
+
+.ColorTwoDisabled {
+  background-color: rgba(128, 177, 18, 0.37);
+}
+
+.ColorThree {
+  background-color: rgba(177, 147, 18, 0.67);
+}
+
+.ColorThreeDisabled {
+  background-color: rgba(177, 147, 18, 0.37);
+}
+
+
+
+.Graph {
+  text-align: left;
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+.Graph-main {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  flex: 1;
+}
+
+.ButtonPanel {
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 25px;
+  padding: 2px;
+}
+
+.Sidebar { 
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  width: 250px;
+  background-color: #2e3136;
+  border: 1px solid #2c2c2c;
+}
+
+.ItemList {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.NodeGraph {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, #444 1px, transparent 1px), linear-gradient(to bottom, #444 1px, transparent 1px);
+}
+
+.ItemList .Item {
+    border: 0px;
+    border-style: solid;
+    color: hsla(0,0%,100%,.6);
+    padding: 10px;
+    align-items: center;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.ItemList .Item:hover {
+    background-color: hsla(0,0%,100%,.06);
+}
+
+.Topic {
+    height: 60px;
+    border: 0px;
+    border-style: solid;
+    color: hsla(0,0%,100%,.6);
+    padding: 5px !important;
+    display: flex;
+    align-items: center;
+}
+
+.Topic .TopicOptions {
+  display: flex;
+  flex-direction: column;
+}
+
+.TopicSelected {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(2, 150, 245, 0.2);
+    margin-right: 10px;
+}
+
+.Topic .TopicOptions .Active {
+    background-color: rgba(66, 199, 240, 0.8);
+}
+
+.SmallButton {
+    cursor: pointer;
+    padding: 4px;
+    margin: 1px;
+    user-select: none;
+}
+
+.InputTextBox {
+  flex: 1;
+  background-color: hsla(0,0%,100%,.2);
+  border: 5px solid hsla(0,0%,100%,.0);
+  border-radius: 2px;
+  color: hsla(0,0%,100%,.8);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid #BFC0C0;
+  margin: 20px 20px 20px 20px;
+  color: #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: #BFC0C0;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+/* Second Button */
+
+#button-2 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-2 a {
+  position: relative;
+  transition: all .35s ease-Out;
+}
+
+#slide {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  background: #BFC0C0;
+  position: absolute;
+  transition: all .35s ease-Out;
+  bottom: 0;
+}
+
+#button-2:hover #slide {
+  left: 0;
+}
+
+#button-2:hover a {
+  color: #2D3142;
+}
+
+
+/* Third Button */
+
+#button-3 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-3 a {
+  position: relative;
+  transition: all .45s ease-Out;
+}
+
+#circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #BFC0C0;
+  position: absolute;
+  transition: all .5s ease-Out;
+  top: 20px;
+  left: 70px;
+}
+
+#button-3:hover #circle {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  top: -70px;
+  left: -70px;
+}
+
+#button-3:hover a {
+  color: #2D3142;
+}
