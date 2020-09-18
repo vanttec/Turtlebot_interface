@@ -89,7 +89,7 @@ var pYearDataArr_5 = [22, 23, 22, 25, 23, 23, 25, 22, 23, 25, 23, 26];
 
 var appliancechart = {
     type: "scrollstackedcolumn2d",
-    width: "100%",
+    width: "50%",
     id: "mychart12",
     height: 500,
     dataSource: buildDataThisMonth("Refrigeration")
