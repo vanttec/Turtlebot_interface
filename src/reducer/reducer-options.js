@@ -11,7 +11,7 @@ export default function () {
         },
         {
             id: 3,
-            name: "Appliances"
+            name: "Tutorial 3: SMACH"
         },
         {
             id: 4,

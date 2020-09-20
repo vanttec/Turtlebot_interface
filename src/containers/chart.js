@@ -79,7 +79,7 @@ class ChartDetail extends React.Component<Props> {
 
             document.getElementById("Dashboard").setAttribute("class", "left-option active");
             document.getElementById("Cost").setAttribute("class", "left-option");
-            document.getElementById("Appliances").setAttribute("class", "left-option");
+            document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
             document.getElementById("Emissions").setAttribute("class", "left-option");
 
@@ -230,7 +230,7 @@ class ChartDetail extends React.Component<Props> {
 
             document.getElementById("Dashboard").setAttribute("class", "left-option");
             document.getElementById("Cost").setAttribute("class", "left-option active");
-            document.getElementById("Appliances").setAttribute("class", "left-option");
+            document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
             document.getElementById("Emissions").setAttribute("class", "left-option");
 
@@ -481,11 +481,11 @@ class ChartDetail extends React.Component<Props> {
             ReactDOM.unmountComponentAtNode(document.getElementById('chart1'));
 
             document.getElementById("parent1").setAttribute("class", "chart1-app col-lg-12 col-xl-12");
-            document.getElementById("text1").innerHTML = "APPLIANCES";
+            document.getElementById("text1").innerHTML = "Tutorial 3: SMACH";
 
             // document.getElementById("Dashboard").setAttribute("class", "left-option");
             // document.getElementById("Cost").setAttribute("class", "left-option");
-            // document.getElementById("Appliances").setAttribute("class", "left-option active");
+            // document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option active");
             // document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
             // document.getElementById("Emissions").setAttribute("class", "left-option");
 
@@ -535,15 +535,183 @@ class ChartDetail extends React.Component<Props> {
                 height: 500
             }
 
-            var chart = document.getElementById("chart1");
-            var title = document.createElement("h1");
-            var body = document.createElement("div");
-            var instructions_txt = document.createElement("p1");
-            title.textContent = "Package used to make a state machine:";
-            instructions_txt.textContent = "SMACH is a task-level architecture for rapidly creating complex robot behavior. At its core, SMACH is a ROS-independent Python library to build hierarchical state machines. SMACH is a new library that takes advantage of very old concepts in order to quickly create robust robot behavior with maintainable and modular code.";
-            body.appendChild(instructions_txt);
-            chart.appendChild(title);
-            chart.appendChild(body);
+            // var chart = document.getElementById("chart1");
+            // var title = document.createElement("h1");
+            // var body = document.createElement("div");
+            // var instructions_txt = document.createElement("p1");
+            // title.textContent = "Package used to make a state machine:";
+            // instructions_txt.textContent = "SMACH is a task-level architecture for rapidly creating complex robot behavior. At its core, SMACH is a ROS-independent Python library to build hierarchical state machines. SMACH is a new library that takes advantage of very old concepts in order to quickly create robust robot behavior with maintainable and modular code.";
+            // body.appendChild(instructions_txt);
+            document.getElementById("chart1").style = "padding-left:10%;"
+            const tutorial = (
+                <div>
+                    <h1>Package used to create a state machine</h1>
+                    <a href="http://wiki.ros.org/smach">Link to SMACH</a>
+                    <p>
+                        SMACH is a task-level architecture for rapidly creating
+                        complex robot behavior. At its core, SMACH is a ROS-independent Python
+                        library to build hierarchical state machines. SMACH is a new library
+                        that takes advantage of very old concepts in order to
+                        quickly create robust robot behavior with maintainable and modular code.
+                    </p>
+                    <h2>
+                        When should I use SMACH?
+                        </h2>
+                    <p>
+                        SMACH is useful when you want a robot to execute some complex plan, where all possible
+                        states and state transitions can be described explicitly. This basically takes the hacking out
+                        of hacking together different modules to make systems like mobile robotic manipulators do interesting things.
+                    </p>
+                    <ul>
+                        <li>
+                            Fast prototyping: The straightforward Python-based SMACH syntax makes it easy to
+                            quickly prototype a state machine and start running it.
+                        </li>
+                        <li>
+                            Complex state machines: SMACH allows you to design,
+                            maintain and debug large, complex hierarchical state machines.
+                            You can find an
+                            example of a complex hierarchical state machine here.
+                        </li>
+                        <li>
+                            ntrospection: SMACH gives you full
+                            introspection in your state machines,
+                            state transitions, data
+                            flow, etc. See the smach_viewer for more details.
+                        </li>
+                    </ul>
+                    <h2>When should I NOT use SMACH?</h2>
+                    <ul>
+                        <li>
+                            Unstructured tasks: SMACH will fall short as
+                            the scheduling of your task becomes less structured.
+                        </li>
+                        <li>
+                            Low-level systems:
+                            SMACH is not meant to be used as a
+                            state machine for low-level systems that
+                            require high efficiency,
+                            SMACH is a task-level architecture.
+                        </li>
+                        <li>
+                            Smash: Do not use SMACH when
+                            you want to smash something, for that use smash.
+                        </li>
+                    </ul>
+                    <h2>Is SMACH only a finite state machine library?</h2>
+                    <ul>
+                        <li>
+                            You can build a finite state machine using
+                            SMACH, but SMACH can do much more. SMACH is a
+                            library for task-level execution and coordination,
+                            and provides several types of "state containers".
+                            One such container, is a finite state machine,
+                            but this container can also be a state in another container.
+                            See the tutorials page
+                            for a list of containers and states built into SMACH.
+                        </li>
+                    </ul>
+                    <h2>When should I NOT use SMACH?</h2>
+                    <ul>
+                        <li>
+                            Unstructured tasks: SMACH will fall short as
+                            the scheduling of your task becomes less structured.
+                            </li>
+                        <li>
+                            Low-level systems: SMACH is
+                            not meant to be used as a state machine f
+                            or low-level systems that require high efficiency,
+                            SMACH is a task-level architecture.
+                            </li>
+                        <li>
+                            Smash: Do not use SMACH when you want
+                            to smash something, for that use smash.
+                            </li>
+                    </ul>
+
+                    <h2>Is SMACH only a finite state machine library? </h2>
+                    <ul>
+                        <li>
+                            You can build a finite state machine using SMACH,
+                            but SMACH can do much more. SMACH is a library for
+                            task-level execution and coordination, and provides
+                            several types of "state containers". One such container,
+                            is a finite state machine, but this container can also be
+                            a state in another container. See the tutorials
+                            page for a list of containers and states built into SMACH.
+                            </li>
+                    </ul>
+                    <h2>Package used for robot navigation planning:</h2>
+                    <h2><i><a href="http://wiki.ros.org/dwa_local_planner">DWA_LOCAL_PLANNER:</a></i></h2>
+                    <img src={require("../assets/tut3image1.png")} style={{ max_width: "100%", height: "auto" }} />
+                    <p>
+                        This package provides an implementation of the Dynamic Window
+                        Approach to local robot navigation on a plane.
+                        Given a global plan to follow and a costmap,
+                        the local planner produces velocity commands to send to a
+                        mobile base. This package supports any robot who's footprint
+                        can be represented as a convex polygon or cicrle,
+                        and exposes its configuration as ROS parameters that can
+                        be set in a launch file. The parameters for this planner
+                        are also dynamically reconfigurable. This package's ROS
+                        wrapper adheres to the BaseLocalPlanner interface specified
+                        in the nav_core package..
+                    </p>
+
+                    <p>
+                        The dwa_local_planner package provides a
+                        controller that drives a mobile base in the plane.
+                        This controller serves to connect the path planner to
+                        the robot. Using a map, the planner creates a kinematic
+                        trajectory for the robot to get from a start to a goal
+                        location. Along the way, the planner creates, at least
+                        locally around the robot, a value function, represented
+                        as a grid map. This value function encodes the costs of
+                        traversing through the grid cells. The controller's
+                        job is to use this value function to determine dx,dy,dtheta
+                        velocities to send to the robot.
+                    </p>
+                    <br />
+
+                    <h3>
+                        The basic idea of the Dynamic Window Approach (DWA) algorithm is as follows:
+                    </h3>
+                    <ol>
+                        <li>
+                            Discretely sample in the robot's control space (dx,dy,dtheta)
+                        </li>
+                        <li>
+                            For each sampled velocity, perform forward simulation from the robot's current state to predict what would happen if the sampled velocity were applied for some (short) period of time.
+                        </li>
+                        <li>
+                            Evaluate (score) each trajectory resulting from the
+                            forward simulation, using a metric that incorporates
+                            characteristics such as: proximity to obstacles,
+                            proximity to the goal, proximity to the global path,
+                            and speed. Discard illegal trajectories (those that
+                            collide with obstacles).
+                        </li>
+                        <li>
+                            Pick the highest-scoring trajectory and send the associated velocity to the mobile base
+                        </li>
+                        <li>
+                            Rinse and repeat.
+                        </li>
+                    </ol>
+
+                    <h2>TURTLEBOT 2</h2>
+                    <h3>(the robot we're using)</h3>
+
+                    <img src={require("../assets/turtlebot2.png")} style={{width:"15%", height:"15%"}}/>
+                </div>
+            );
+
+            ReactDOM.render(
+                tutorial,
+                document.getElementById('chart1'));
+
+            // chart.appendChild(title);
+            // chart.appendChild(body);
             console.log("test");
 
         }
@@ -557,7 +725,7 @@ class ChartDetail extends React.Component<Props> {
 
             document.getElementById("Dashboard").setAttribute("class", "left-option");
             document.getElementById("Cost").setAttribute("class", "left-option");
-            document.getElementById("Appliances").setAttribute("class", "left-option");
+            document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option active");
             document.getElementById("Emissions").setAttribute("class", "left-option");
 
@@ -676,7 +844,7 @@ class ChartDetail extends React.Component<Props> {
             var cper;
             document.getElementById("Dashboard").setAttribute("class", "left-option");
             document.getElementById("Cost").setAttribute("class", "left-option");
-            document.getElementById("Appliances").setAttribute("class", "left-option");
+            document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
             document.getElementById("Emissions").setAttribute("class", "left-option active");
 
