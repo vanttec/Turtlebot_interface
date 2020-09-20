@@ -18,7 +18,7 @@ import chartConfigs4, { fourth_chart_today, fourth_chart_month, fourth_chart_yea
 import chartConfigs5, { fifth_chart_today, fifth_chart_month, fifth_chart_year } from '../chart-configs/dashboard_fifth_chart';
 import chartConfigs6, { sixth_chart_today, sixth_chart_month, sixth_chart_year } from '../chart-configs/dashboard_sixth_chart';
 import chartConfigs7, { seventh_chart_today, seventh_chart_month, seventh_chart_year } from '../chart-configs/dashboard_seventh_chart';
- 
+
 import emissionchart, { carbonfootprint_month_data, carbonfootprint_today_data, carbonfootprint_year_data, green_energy_stats_today_data, green_energy_stats_month_data, green_energy_stats_year_data } from '../emissions/emission_data';
 import usagechart, { usage_today, usage_yesterday, usage_thismonth, usage_lastmonth, usage_thisyear, usage_lastyear } from '../usage/usage_data1';
 import costchart, { cost_last_month, cost_this_month, cost_last_day, cost_this_day, cost_last_year, cost_this_year } from '../cost/cost_data1';
@@ -42,12 +42,12 @@ FusionCharts.options.creditLabel = false;
 //Cuando se activa funcion en App.js, se utiliza funcion Props para tomar el valor de ROS
 type Props = {
     ros: ROSLIB.Ros,
-  }
+}
 
 
 class ChartDetail extends React.Component<Props> {
-    
-    
+
+
     componentDidMount() {
         console.log("holamundo");
         console.log(document.getElementById("month").click());
@@ -114,7 +114,7 @@ class ChartDetail extends React.Component<Props> {
 
 
             ReactDOM.render(
-                <ReactFC {...chartConfigs1} />, 
+                <ReactFC {...chartConfigs1} />,
                 document.getElementById('chart1'));
 
             ReactDOM.render(
@@ -483,11 +483,11 @@ class ChartDetail extends React.Component<Props> {
             document.getElementById("parent1").setAttribute("class", "chart1-app col-lg-12 col-xl-12");
             document.getElementById("text1").innerHTML = "APPLIANCES";
 
-            document.getElementById("Dashboard").setAttribute("class", "left-option");
-            document.getElementById("Cost").setAttribute("class", "left-option");
-            document.getElementById("Appliances").setAttribute("class", "left-option active");
-            document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
-            document.getElementById("Emissions").setAttribute("class", "left-option");
+            // document.getElementById("Dashboard").setAttribute("class", "left-option");
+            // document.getElementById("Cost").setAttribute("class", "left-option");
+            // document.getElementById("Appliances").setAttribute("class", "left-option active");
+            // document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
+            // document.getElementById("Emissions").setAttribute("class", "left-option");
 
             document.getElementById("bd-docs-nav").setAttribute("class", "bd-links collapse");
 
@@ -523,28 +523,29 @@ class ChartDetail extends React.Component<Props> {
             document.getElementById("parent6").style.height = "0px";
 
             // to be written
+            var test = document.createElement("div");
+            var title = document.createElement("p1");
+            title.nodeValue = "How to make a state machine";
+            test.appendChild(title);
 
-            ReactDOM.render(
-                // <AppliancesComponent appliancechart={appliancechart} />
-                <h1>Hello world</h1>,
-                document.getElementById('chart1'));
-                
-            // t.onclick = function () {
-                
-            // }
+            var properties = {
+                type: "scrollstackedcolumn2d",
+                width: "50%",
+                id: "tutorial3",
+                height: 500
+            }
 
-            // m.onclick = function () {
+            var chart = document.getElementById("chart1");
+            var title = document.createElement("h1");
+            var body = document.createElement("div");
+            var instructions_txt = document.createElement("p1");
+            title.textContent = "Package used to make a state machine:";
+            instructions_txt.textContent = "SMACH is a task-level architecture for rapidly creating complex robot behavior. At its core, SMACH is a ROS-independent Python library to build hierarchical state machines. SMACH is a new library that takes advantage of very old concepts in order to quickly create robust robot behavior with maintainable and modular code.";
+            body.appendChild(instructions_txt);
+            chart.appendChild(title);
+            chart.appendChild(body);
+            console.log("test");
 
-               
-            // }
-
-            // setTimeout(function () {
-            //     document.getElementById("month").click();
-            // });
-
-            // y.onclick = function () {
-
-            // }
         }
 
         else if (this.props.user.id === 4) {
@@ -1067,18 +1068,18 @@ class ChartDetail extends React.Component<Props> {
 
         }
 
-                // ROS-computation-graph Option Logic.
+        // ROS-computation-graph Option Logic.
 
-                else if (this.props.user.id === 6) {
+        else if (this.props.user.id === 6) {
 
-                        console.log("ROS-computation-graph");
-                        ReactDOM.render(
-                        <Graph  ros={this.ros} />,
-                        document.getElementById('root')
-                        
-                         );
-                }
-                
+            console.log("ROS-computation-graph");
+            ReactDOM.render(
+                <Graph ros={this.ros} />,
+                document.getElementById('root')
+
+            );
+        }
+
         else {
             var defaultElement = (
                 <div>
@@ -1102,7 +1103,7 @@ class ChartDetail extends React.Component<Props> {
     render() {
         return (
             <div>
-            
+
             </div>
         );
 
