@@ -62,7 +62,7 @@ class Roboboat extends React.Component<Props, State> {
 
 
 
-      document.getElementById('Dashboard').click();
+      document.getElementById('Tutorial1: Rospy-tutorials').click();
       document.getElementById('month').click();
   }
 

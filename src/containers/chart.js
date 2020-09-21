@@ -77,11 +77,11 @@ class ChartDetail extends React.Component<Props> {
             document.getElementById("parent1").setAttribute("class", "col-lg-6 col-xl-4");
             document.getElementById("text1").innerHTML = "COST PREDICTED"
 
-            document.getElementById("Dashboard").setAttribute("class", "left-option active");
+         /*   document.getElementById("Tutorial1: Rospy-tutorials").setAttribute("class", "left-option active");
             document.getElementById("Cost").setAttribute("class", "left-option");
             document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
-            document.getElementById("Emissions").setAttribute("class", "left-option");
+            document.getElementById("Emissions").setAttribute("class", "left-option");*/
 
             document.getElementById("bd-docs-nav").setAttribute("class", "bd-links collapse");
 
@@ -567,7 +567,7 @@ class ChartDetail extends React.Component<Props> {
             document.getElementById("parent1").setAttribute("class", "chart1-us col-lg-12 col-xl-12");
             document.getElementById("text1").innerHTML = "USAGE BY ROOMS";
 
-            document.getElementById("Dashboard").setAttribute("class", "left-option");
+            document.getElementById("Tutorial1: Rospy-tutorials").setAttribute("class", "left-option");
             document.getElementById("Cost").setAttribute("class", "left-option");
             document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option active");
@@ -686,7 +686,7 @@ class ChartDetail extends React.Component<Props> {
             document.getElementById("text1").innerHTML = "EMISSIONS";
 
             var cper;
-            document.getElementById("Dashboard").setAttribute("class", "left-option");
+            document.getElementById("Tutorial1: Rospy-tutorials").setAttribute("class", "left-option");
             document.getElementById("Cost").setAttribute("class", "left-option");
             document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");

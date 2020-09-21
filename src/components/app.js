@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import logo from '../arm.svg';
+import logo from '../vanttec.svg';
 import Roboboat from './Roboboat'
 import ROSLIB from'roslib';
 type Props = {
@@ -75,7 +75,7 @@ class App extends React.Component<Props, State> {
             <div className="App">
                 <div className="AppHeader">
                   <img src={logo} className="Logo" alt="logo" />
-                  <h2>Welcome to Roboboat interface</h2>
+                  <h2>Welcome to our new interface for ROS-TUTORIALS</h2>
                 </div>
                 <div className="AppMain">
                   <h2>Connect to url</h2>

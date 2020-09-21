@@ -3,23 +3,15 @@ export default function () {
     return [
         {
             id: 1,
-            name: "Dashboard"
+            name: "Tutorial1: Rospy-tutorials"
         },
         {
             id: 2,
-            name: "Cost"
+            name: "Tutorial2: Husarion"
         },
         {
             id: 3,
             name: "Tutorial 3: SMACH"
-        },
-        {
-            id: 4,
-            name: "Usage-by-rooms"
-        },
-        {
-            id: 5,
-            name: "Emissions"
         },
         {
             id: 6,
