@@ -218,8 +218,6 @@ class ChartDetail extends React.Component<Props> {
                 FusionCharts.items['mychart6'].setJSONData(yearnewdata6);
                 FusionCharts.items['mychart10'].setJSONData(yearnewdata7);
             };
-
-
         }
 
         else if (this.props.user.id === 2) {
@@ -228,18 +226,19 @@ class ChartDetail extends React.Component<Props> {
 
             ReactDOM.unmountComponentAtNode(document.getElementById('chart1'));
 
+            document.getElementById("parent1").setAttribute("class", "chart1-app col-lg-12 col-xl-12");
+            document.getElementById("text1").innerHTML = "Tutorial 2: Navegation & Vision";
+
+            /**
             document.getElementById("Dashboard").setAttribute("class", "left-option");
             document.getElementById("Cost").setAttribute("class", "left-option active");
             document.getElementById("Tutorial 3: SMACH").setAttribute("class", "left-option");
             document.getElementById("Usage-by-rooms").setAttribute("class", "left-option");
             document.getElementById("Emissions").setAttribute("class", "left-option");
+            **/
 
             document.getElementById("bd-docs-nav").setAttribute("class", "bd-links collapse");
 
-
-
-            document.getElementById("parent1").setAttribute("class", "chart1-co col-lg-12 col-xl-12");
-            document.getElementById("text1").innerHTML = "Cost";
 
             ReactDOM.unmountComponentAtNode(document.getElementById('chart2'));
 
@@ -272,207 +271,52 @@ class ChartDetail extends React.Component<Props> {
             document.getElementById("parent6").style.width = "0px";
             document.getElementById("parent6").style.height = "0px";
 
+            document.getElementById("chart1").style = "padding-left:10%;"
+            const tutorial = (
+                <div>
+                    <h1>Package used for manual navigation</h1>
+                    <h2>Teleop_twist_keyboard</h2>
+                    <a href="http://wiki.ros.org/teleop_twist_keyboard">Link to ROS Wiki Teleop Keyboard</a>
+                    <p>
+                        We’ll be controlling movement using the Teleop Twist Keyboard package. Similarily,
+                        you could control movement with an Xbox or Playstation controller, using Teleop Twist 
+                        Joy (or another compatible joystick package).
+                    </p>
 
-            ReactDOM.render(
-                <CostComponent costchart={costchart} />,
-                document.getElementById('chart1'));
+                    <img src={require("../assets/tut2image1.png")} style={{width:"90%", height:"100%"}}/>
 
-            // logic for today button       
+                    <h1>Package used for object identification</h1>
+                    <h2>Find_object_2d</h2>
+                    <a href="http://wiki.ros.org/find_object_2d">Link to ROS Wiki Find Object 2D</a>
+                    <p>
+                        Simple Qt interface to try OpenCV implementations of SIFT, SURF, FAST, BRIEF and 
+                        other feature detectors and descriptors. Using a webcam, objects can be detected 
+                        and published on a ROS topic with ID and position (pixels in the image). 
+                        This package is a ROS integration of the <a href="http://introlab.github.io/find-object/">Find-Object</a> 
+                        application.
+                    </p>
+                    <h1>3D position of the objects</h1>
+                    <p>
+                        When using Kinect-like sensors, 3D position of the objects can be computed in 
+                        Find-Object ros-pkg.
+                    </p>
+                    
+                    <img src={require("../assets/tut2image2.png")} style={{width:"90%", height:"100%"}}/>
+                    <img src={require("../assets/tut2image3.png")} style={{width:"90%", height:"100%"}}/>
 
-            t.onclick = function () {
-                window.selectedperiod = "today";
-                document.getElementById("date").innerHTML = moment().format('MMMM, Do YYYY');
+                    <h1>Robot for this tutorial</h1>
+                    <h2>Rosbot 2.0</h2>
+                    <a href="https://husarion.com/">Link to Rosbot 2.0 page</a>
+                    <h2>
 
-                document.getElementById("c2").innerHTML = "Yesterday";
-                document.getElementById("c1").innerHTML = "Today";
-                if (window.b2selected) {
+                    </h2>
 
-                    var cotoday2 = cost_last_day;
-                    FusionCharts.items['mychart8'].setJSONData(cotoday2);
-                    // document.getElementById("cost-elements").style.paddingLeft = "200px";
+                    <img src={require("../assets/rosbot2.0.png")} style={{width:"80%", height:"80%"}}/>
+                </div>
+            );
 
-                    document.getElementById("co-tablecell-title1").innerHTML = moment().subtract(2, 'day').format('MMM Do YYYY');
-                    document.getElementById("co-tablecell-value1").innerHTML = "$" + todayArr[0];
-
-                    document.getElementById("co-tablecell-title2").innerHTML = moment().subtract(1, 'day').format('MMM Do YYYY');
-                    document.getElementById("co-tablecell-value2").innerHTML = "$" + todayArr[1];
-
-                    document.getElementById("co-tablecell-title3").innerHTML = "Savings";
-                    document.getElementById("co-tablecell-value3").innerHTML = "$" + Math.round((todayArr[0] - todayArr[1]) * 100) / 100;
-
-                    document.getElementById("co-tablecell-title4").style.display = 'none';
-                    document.getElementById("co-tablecell-value4").style.display = 'none';
-                }
-                else {
-
-                    var cotoday = cost_this_day;
-                    FusionCharts.items['mychart8'].setJSONData(cotoday);
-                    //  document.getElementById("cost-elements").style.paddingLeft = "0px";
-
-                    document.getElementById("co-tablecell-title1").innerHTML = moment().subtract(1, 'day').format('MMM Do YYYY');
-                    document.getElementById("co-tablecell-value1").innerHTML = "$" + todayArr[1];
-
-                    var sftVal = 0;
-                    // eslint-disable-next-line
-                    for (var i = 0; i < parseInt(moment().format('H')); i++) {
-                        sftVal = sftVal + parseFloat(todayElecSplit[i]) + parseFloat(todayGasSplit[i]);
-                    }
-                    sftVal = Math.round(sftVal * 100) / 100;
-
-                    document.getElementById("co-tablecell-title2").innerHTML = "So Far Today";
-                    document.getElementById("co-tablecell-value2").innerHTML = "$" + sftVal;
-
-
-
-                    document.getElementById("co-tablecell-title3").innerHTML = "Predicted Today";
-                    document.getElementById("co-tablecell-value3").innerHTML = "$" + todayArr[2];
-
-                    document.getElementById("co-tablecell-title4").style.display = 'block';
-                    document.getElementById("co-tablecell-value4").style.display = 'block';
-
-                    document.getElementById("co-tablecell-title4").innerHTML = "Estimated Savings";
-                    document.getElementById("co-tablecell-value4").innerHTML = "$" + Math.round((todayArr[1] - todayArr[2]) * 100) / 100;
-                }
-            };
-
-            // var m1 = document.getElementById("month");
-
-            m.onclick = function () {
-
-                window.selectedperiod = "month";
-
-                document.getElementById("date").innerHTML = moment().format('MMMM YYYY');
-
-                document.getElementById("c2").innerHTML = "Last Month";
-                document.getElementById("c1").innerHTML = "This Month";
-
-                if (window.b2selected) {
-                    var comonth2 = cost_last_month;
-                    FusionCharts.items['mychart8'].setJSONData(comonth2);
-                    //  document.getElementById("cost-elements").style.paddingLeft = "200px";
-
-                    document.getElementById("co-tablecell-title1").innerHTML = moment().subtract(2, 'month').format('MMMM');
-                    document.getElementById("co-tablecell-value1").innerHTML = "$" + monthArr[0];
-
-                    document.getElementById("co-tablecell-title2").innerHTML = moment().subtract(1, 'month').format('MMMM');
-                    document.getElementById("co-tablecell-value2").innerHTML = "$" + monthArr[1];
-
-                    var savings_value = Math.round((monthArr[1] - monthArr[0]) * 100) / 100;
-
-                    if (savings_value < 0) {
-                        savings_value = Math.abs(savings_value);
-                        document.getElementById("co-tablecell-title3").innerHTML = "Savings";
-                        document.getElementById("co-tablecell-value3").innerHTML = "-$" + savings_value;
-                    }
-
-                    else {
-                        document.getElementById("co-tablecell-title3").innerHTML = "Savings";
-                        document.getElementById("co-tablecell-value3").innerHTML = "$" + savings_value;
-                    }
-
-                    document.getElementById("co-tablecell-title4").style.display = "none";
-                    document.getElementById("co-tablecell-value4").style.display = "none";
-
-                }
-                else {
-                    var comonth = cost_this_month;
-
-                    FusionCharts.items['mychart8'].setJSONData(comonth);
-
-                    //  document.getElementById("cost-elements").style.paddingLeft = "0px";
-                    document.getElementById("co-tablecell-title1").innerHTML = moment().subtract(1, 'month').format('MMMM');
-                    document.getElementById("co-tablecell-value1").innerHTML = "$" + monthArr[1];
-
-                    var sfmVal = 0;
-                    // eslint-disable-next-line
-                    for (var i = 0; i < parseInt(moment().format('D')); i++) {
-                        sfmVal = sfmVal + parseFloat(mElecSplit[i]) + parseFloat(mGasSplit[i]);
-                    }
-                    sfmVal = Math.round(sfmVal * 100) / 100;
-
-                    document.getElementById("co-tablecell-title2").innerHTML = "So Far This Month";
-                    document.getElementById("co-tablecell-value2").innerHTML = "$" + sfmVal;
-
-                    document.getElementById("co-tablecell-title3").innerHTML = "Predicted This Month";
-                    document.getElementById("co-tablecell-value3").innerHTML = "$" + monthArr[2];
-
-                    document.getElementById("co-tablecell-title4").style.display = "block";
-                    document.getElementById("co-tablecell-value4").style.display = "block";
-
-                    document.getElementById("co-tablecell-title4").innerHTML = "Estimated savings";
-                    document.getElementById("co-tablecell-value4").innerHTML = "$" + Math.round((monthArr[2] - monthArr[1]) * 100) / 100;
-
-                }
-            };
-            setTimeout(function () {
-                document.getElementById("month").click();
-            });
-            // var y1 = document.getElementById("year");
-
-            y.onclick = function () {
-                window.selectedperiod = "year";
-                document.getElementById("date").innerHTML = moment().format('YYYY');
-
-                document.getElementById("c2").innerHTML = "Previous Year";
-                document.getElementById("c1").innerHTML = "This Year";
-
-
-                // document.getElementById("co-tablecell-value1").style.paddingLeft = "20px";
-                // document.getElementById("co-tablecell-value2").style.paddingLeft = "20px";
-
-
-
-                if (window.b2selected) {
-                    var coyear2 = cost_last_year;
-                    FusionCharts.items['mychart8'].setJSONData(coyear2);
-
-                    //  document.getElementById("cost-elements").style.paddingLeft = "200px";
-
-                    document.getElementById("co-tablecell-title1").innerHTML = moment().subtract(2, 'year').format('YYYY');
-                    document.getElementById("co-tablecell-value1").innerHTML = "$" + yearArr[0];
-
-                    document.getElementById("co-tablecell-title2").innerHTML = moment().subtract(1, 'year').format('YYYY');
-                    document.getElementById("co-tablecell-value2").innerHTML = "$" + yearArr[1];
-
-                    document.getElementById("co-tablecell-title3").innerHTML = "Savings";
-                    document.getElementById("co-tablecell-value3").innerHTML = "$" + Math.round((yearArr[0] - yearArr[1]) * 100) / 100;
-
-                    document.getElementById("co-tablecell-title4").style.display = "none";
-                    document.getElementById("co-tablecell-value4").style.display = "none";
-                }
-                else {
-                    var coyear = cost_this_year;
-                    FusionCharts.items['mychart8'].setJSONData(coyear);
-
-                    //   document.getElementById("cost-elements").style.paddingLeft = "0px";
-
-                    document.getElementById("co-tablecell-title1").innerHTML = moment().subtract(1, 'year').format('YYYY');
-                    document.getElementById("co-tablecell-value1").innerHTML = "$" + yearArr[1];
-
-                    var styVal = 0;
-                    // eslint-disable-next-line
-                    for (var i = 0; i < parseInt(moment().format('M')); i++) {
-                        styVal = styVal + parseFloat(yElecSplit[i]) + parseFloat(yGasSplit[i]);
-                    }
-                    styVal = Math.round(styVal * 100) / 100;
-
-                    document.getElementById("co-tablecell-title2").innerHTML = "So Far This Year";
-                    document.getElementById("co-tablecell-value2").innerHTML = "$" + styVal;
-
-
-                    document.getElementById("co-tablecell-title3").innerHTML = "Predicted This Year";
-                    document.getElementById("co-tablecell-value3").innerHTML = "$" + yearArr[2];
-
-                    document.getElementById("co-tablecell-title4").style.display = "block";
-                    document.getElementById("co-tablecell-value4").style.display = "block";
-
-                    document.getElementById("co-tablecell-title4").innerHTML = "Estimated Savings";
-                    document.getElementById("co-tablecell-value4").innerHTML = "$" + Math.round((yearArr[1] - yearArr[2]) * 100) / 100;
-                }
-
-            };
-
-
+            ReactDOM.render(tutorial, document.getElementById('chart1'));
+            
         }
 
         else if (this.props.user.id === 3) {
